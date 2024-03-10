@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - CompareWise
+name: Build and deploy Python app to Azure Web App - Comparewise
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
       - name: Create and start virtual environment
         run: |
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BADA7AF2EE6D440EB4B4CCAA3D808E44 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_14870C1689AF425489DF935536C6E09C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F82821A91DBA4D918A31AFDC0B4108A1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B56F1CFBA5C04F0FB5D34C47971407F5 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C0A60A542E5747389DFA63039E6AB952 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FD85FCB2122C4157808EEFAE386FFEBB }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'CompareWise'
+          app-name: 'Comparewise'
           slot-name: 'Production'
           
