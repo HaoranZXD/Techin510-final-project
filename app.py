@@ -131,7 +131,7 @@ if st.session_state.product_details_1 and st.session_state.product_details_2:
 
 
     # Initialize JSONQueryEngines here after confirming product details are available
-    reader = SimpleDirectoryReader(input_files=["product_details_1.json", "product_details_2.json"])
+    reader = SimpleDirectoryReader(input_files=[f"{st.session_state.product_id_1}.json", f"{st.session_state.product_id_2}.json"])
 
     documents = reader.load_data()
     index = VectorStoreIndex.from_documents(documents)
