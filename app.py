@@ -33,8 +33,8 @@ def query_product(product_id):
     url = "https://axesso-axesso-amazon-data-service-v1.p.rapidapi.com/amz/amazon-lookup-product"
     querystring = {"url": f"https://www.amazon.com/dp/{product_id}/"}
     headers = {
-        "X-RapidAPI-Key": os.getenv("X-RapidAPI-Key"),
-        "X-RapidAPI-Host": os.getenv("X-RapidAPI-Host")
+        "X-RapidAPI-Key": os.getenv("X_RapidAPI_Key"),
+        "X-RapidAPI-Host": os.getenv("X_RapidAPI_Host")
     }
     response = requests.get(url, headers=headers, params=querystring)
     if response.status_code == 200:
